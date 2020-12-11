@@ -27,6 +27,7 @@
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "reactstrap": "^8.7.1",
     "redux": "^4.0.5",
     "redux-form": "^8.3.7",
     "redux-thunk": "^2.3.0",
@@ -34,7 +35,7 @@
     "semantic-ui-react": "^2.0.1"
   },
   "scripts": {
-    "start-backend": "cd server && node app",
+    "start-backend": "cd server && nodemon app",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

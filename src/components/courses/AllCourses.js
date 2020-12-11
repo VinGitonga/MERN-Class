@@ -40,7 +40,6 @@ export default function AllCourses(){
                                 <Table.HeaderCell>Name</Table.HeaderCell>
                                 <Table.HeaderCell>Department</Table.HeaderCell>
                                 <Table.HeaderCell>Intake</Table.HeaderCell>
-                                <Table.HeaderCell>Created</Table.HeaderCell>
                                 <Table.HeaderCell>Action</Table.HeaderCell>
                             </Table.Row>
                         </Table.Header>
@@ -51,7 +50,6 @@ export default function AllCourses(){
                                         <Table.Cell>{course.name}</Table.Cell>
                                         <Table.Cell>{course.department}</Table.Cell>
                                         <Table.Cell>{course.intake}</Table.Cell>
-                                        <Table.Cell>{course.created}</Table.Cell>
                                         <Table.Cell key={i}>
                                             <Link to={'/courses/edit/'+course._id}>
                                                 <Button icon>

@@ -4,6 +4,8 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/user.routes')
+const instructorRoutes = require('./routes/instructor.routes')
+const studentRoutes = require('./routes/student.routes')
 //const authRoutes = require('./routes/auth.routes')
 const courseRoutes = require('./routes/course.routes');
 const config = require('./config/config');
@@ -30,6 +32,8 @@ app.use(cors()) //enable Cross Origin Resource Sharing
 
 app.use('/',userRoutes)
 app.use('/',courseRoutes)
+app.use('/',instructorRoutes)
+app.use('/',studentRoutes)
 //app.use('/',authRoutes)
 
 

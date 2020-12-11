@@ -26,6 +26,13 @@ const Menu1 = withRouter(({history})=>(
         <Menu.Item
            as={NavLink} to="/courses/all"
            name="Course" active={isActive(history,'/courses/all')}/>
+
+        <Menu.Item
+           as={NavLink} to="/instructors/all"
+           name="Tutor" active={isActive(history,'/instructors/all')}/>
+        <Menu.Item
+           as={NavLink} to="/students/all"
+           name="Students" active={isActive(history,'/students/all')}/>
     </Menu>
 ))
 

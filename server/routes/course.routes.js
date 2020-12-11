@@ -18,4 +18,4 @@ router.route('/api/courses/:courseId')
 
 router.param('courseId',courseCtrl.courseByID)
 
-module.exports = router;
+module.exports = router
