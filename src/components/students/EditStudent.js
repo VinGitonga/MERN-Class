@@ -3,7 +3,7 @@ import {update} from './api-student'
 import {list as listCourse} from '../courses/api-course'
 import {list as listInstructor} from '../instructors/api-instructor'
 import {Link, Redirect} from 'react-router-dom'
-import {Select, Form, Button,Card, Container} from 'semantic-ui-react'
+import {Select, Form, Button,Card, Container,Input} from 'semantic-ui-react'
 
 
 export default function EditStudent ({match}){
@@ -76,7 +76,7 @@ export default function EditStudent ({match}){
         }
     })
 
-    //append the courses to be selected
+    //append the tutors data to be selected
     const optsTuts = tutors.map((tut,i)=>{
         return  (
             {key:i, text:tut.name, value:student.instructor}
@@ -105,7 +105,7 @@ export default function EditStudent ({match}){
     ]
 
     //handle form submission and saving data
-    clickSubmit = () =>{
+    const clickSubmit = () =>{
         let studentData = new FormData()
         student.name && studentData.append('name',student.name)
         student.gender && studentData.append('gender',student.gender)
@@ -139,7 +139,7 @@ export default function EditStudent ({match}){
 
 
 
-    //render the form 
+    //render the form
 
     return (
         <>
@@ -165,7 +165,7 @@ export default function EditStudent ({match}){
                                    onChange={handleChange('gender')}
                                    />
 
-                                
+
                                 <Form.Field id='form-input'
                                    control={Select}
                                    label="Religion"
@@ -203,7 +203,7 @@ export default function EditStudent ({match}){
                                    value={student.phoneno}
                                    onChange={handleChange('phoneno')}
                                    />
-                                
+
                                 <Form.Field id="form-input"
                                    control={Input}
                                    label="Guardian's Name"
@@ -226,7 +226,7 @@ export default function EditStudent ({match}){
                                   onChange={handleChange('address')}
                                   />
                            </Form.Group>
-                            <Form.Group widths="equal">                                
+                            <Form.Group widths="equal">
                                 <Form.Field id="form-input"
                                   control={Input}
                                   label="Date of Admission"
@@ -248,13 +248,13 @@ export default function EditStudent ({match}){
                                    placeholder="Choose ...."
                                    options={optsTuts}
                                    onChange={handleChange('instructor')} />
-                                   
+
                            </Form.Group>
                             <Button primary>Modify </Button>
                             <Link to={'/students/all'}>
                                 <Button secondary>Cancel</Button>
                             </Link>
-                           
+
                        </Form>
                    </Card.Content>
                </Card>

@@ -59,7 +59,7 @@ export default function NewInstructor(){
                             type="text"
                             value={values.name}
                             onChange={handleChange('name')}/>
-                        
+
                         <Form.Field id="form-input"
                            control={Input}
                            label="Email Address"

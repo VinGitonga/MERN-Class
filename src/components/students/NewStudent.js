@@ -65,7 +65,7 @@ export default function NewStudent(){
     }, [])
 
 
-    //handle change 
+    //handle change
     const handleChange = name => event=>{
         setValues({...values, [name]:event.target.value})
     }
@@ -97,31 +97,31 @@ export default function NewStudent(){
     }
 
     const optsGender = [
-        {key: 1, text:'Male', value:values.gender},
-        {key: 2, text:'Female', value:values.gender},
-        {key: 3, text:'Others', value:values.gender}
+        {key: 1, text:'Male', value:"Male"},
+        {key: 2, text:'Female', value:"Female"},
+        {key: 3, text:'Others', value:"Others"}
     ]
 
     const optsReligion = [
-        {key:1, text:'Christian',value:values.religion},
-        {key:2, text:'Hindu',value:values.religion},
-        {key:3,text:'Muslim',value:values.religion},
-        {key:4,text:'Others',value:values.religion}
+        {key:1, text:'Christian',value:"Christian"},
+        {key:2, text:'Hindu',value:"Hindu"},
+        {key:3,text:'Muslim',value:"Muslim"},
+        {key:4,text:'Others',value:"Others"}
     ]
 
-    
 
-    
+
+
 
     const opts = courses.map((crs,i)=>{
         return (
-            {key:i,text:crs.name,value:values.course}
+            {key:i,text:crs.name,value:crs.name}
         )
     })
 
     const optsInts = instructors.map((ints,i)=>{
         return (
-            {key:i, text:ints.name, value:values.instructor}
+            {key:i, text:ints.name,value:ints.name}
         )
     })
 
@@ -149,16 +149,18 @@ export default function NewStudent(){
                                    control={Select}
                                    label="Gender"
                                    placeholder="Choose ..."
+                                   value={values.gender}
                                    options={optsGender}
                                    onChange={handleChange('gender')}
                                    />
 
-                                
+
                                 <Form.Field id='form-input'
                                    control={Select}
                                    label="Religion"
                                    placeholder="Choose ..."
                                    options={optsReligion}
+                                   value={values.religion}
                                    onChange={handleChange('religion')}/>
                            </Form.Group>
 
@@ -191,7 +193,7 @@ export default function NewStudent(){
                                    value={values.phoneno}
                                    onChange={handleChange('phoneno')}
                                    />
-                                
+
                                 <Form.Field id="form-input"
                                    control={Input}
                                    label="Guardian's Name"
@@ -214,7 +216,7 @@ export default function NewStudent(){
                                   onChange={handleChange('address')}
                                   />
                            </Form.Group>
-                            <Form.Group widths="equal">                                
+                            <Form.Group widths="equal">
                                 <Form.Field id="form-input"
                                   control={Input}
                                   label="Date of Admission"
@@ -228,21 +230,23 @@ export default function NewStudent(){
                                    label="Course"
                                    placeholder="Choose ..."
                                    options={opts}
+                                   value={values.course}
                                    onChange={handleChange('course')}/>
 
                                 <Form.Field id="form-input"
                                    control={Select}
                                    label="Instructor"
                                    placeholder="Choose ...."
+                                   value={values.instructor}
                                    options={optsInts}
                                    onChange={handleChange('instructor')} />
-                                   
+
                            </Form.Group>
                             <Button primary>Add </Button>
                             <Link to={'/students/all'}>
                                 <Button secondary>Cancel</Button>
                             </Link>
-                           
+
                        </Form>
                    </Card.Content>
                </Card>
